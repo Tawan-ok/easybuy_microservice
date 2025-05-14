@@ -56,7 +56,7 @@ Client (Frontend/Mobile)
 - **Spring Security + JWT** – สำหรับ Auth
 - **Docker / Docker Compose** – สำหรับ containerization
 - **Jenkins (CI/CD)** – สำหรับ automate build/test/deploy
-- **MySQL / PostgreSQL** – ใช้เป็นฐานข้อมูล
+- **Sql Server / PostgreSQL** – ใช้เป็นฐานข้อมูล
 - **Redis / Kafka (optional)** – ใช้สำหรับ caching หรือ async messaging
 
 ---
