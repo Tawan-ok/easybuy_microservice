@@ -2,12 +2,12 @@ package com.example.Auth_Service.controller;
 
 import com.example.Auth_Service.model.dto.request.LoginRequest;
 import com.example.Auth_Service.model.dto.request.RegisterRequest;
+import com.example.Auth_Service.model.dto.response.AuthResponse;
 import com.example.Auth_Service.service.AuthService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -17,12 +17,15 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public String register(@RequestBody RegisterRequest request) {
-        return authService.register(request);
+    public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
+        String message = authService.register(request);
+        return ResponseEntity.ok(message);
     }
 
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest request) {
-        return authService.login(request);
+    public ResponseEntity<AuthResponse> login(@RequestBody LoginRequest request) {
+        AuthResponse response = authService.login(request);
+        return ResponseEntity.ok(response);
     }
+
 }
