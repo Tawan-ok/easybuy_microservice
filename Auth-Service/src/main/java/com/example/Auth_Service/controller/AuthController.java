@@ -5,7 +5,6 @@ import com.example.Auth_Service.model.dto.request.RegisterRequest;
 import com.example.Auth_Service.model.dto.response.AuthResponse;
 import com.example.Auth_Service.service.AuthService;
 import lombok.RequiredArgsConstructor;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
